@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            background: #e7f3e7;
+            padding: 15px;
+            border-left: 5px solid #4caf50;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Obesity Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="Age">Age:</label>
+            <input type="number" step="any" name="Age" required>
+
+            <label for="Height">Height (m):</label>
+            <input type="number" step="any" name="Height" required>
+
+            <label for="Weight">Weight (kg):</label>
+            <input type="number" step="any" name="Weight" required>
+
+            <label for="Gender">Gender:</label>
+            <select name="Gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="Family_History">Family History:</label>
+            <select name="Family_History">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="FAVC">Frequently High-Calorie Food:</label>
+            <select name="FAVC">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="FCVC">Vegetable Consumption Frequency (1-3):</label>
+            <input type="number" step="any" name="FCVC" required>
+
+            <label for="NCP">Number of Meals per Day (1-4):</label>
+            <input type="number" step="any" name="NCP" required>
+
+            <label for="CH2O">Water Consumption (liters):</label>
+            <input type="number" step="any" name="CH2O" required>
+
+            <label for="FAF">Physical Activity Frequency (days/week):</label>
+            <input type="number" step="any" name="FAF" required>
+
+            <label for="TUE">Technology Usage (hours/day):</label>
+            <input type="number" step="any" name="TUE" required>
+
+            <label for="CAEC">Consumption Between Meals:</label>
+            <select name="CAEC">
+                <option value="Frequently">Frequently</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="Smoke">Smoker:</label>
+            <select name="Smoke">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="SCC">Calorie Monitoring:</label>
+            <select name="SCC">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="CALC">Alcohol Consumption:</label>
+            <select name="CALC">
+                <option value="Frequently">Frequently</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="MTRANS">Transportation Mode:</label>
+            <select name="MTRANS">
+                <option value="Bike">Bike</option>
+                <option value="Motorbike">Motorbike</option>
+                <option value="Public_Transportation">Public Transportation</option>
+                <option value="Walking">Walking</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if bmi and obesity_class %}
+        <div class="result">
+            <p>Your BMI: {{ bmi }}</p>
+            <p>Predicted Obesity Class: {{ obesity_class }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
