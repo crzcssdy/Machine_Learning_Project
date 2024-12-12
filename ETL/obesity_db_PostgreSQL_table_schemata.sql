@@ -23,5 +23,5 @@ CREATE TABLE participants (
 	obesity_level VARCHAR NOT NULL
 );
 
---After importing data into the tables from their respective .csv files via the pgAdmin Import/Export tool, verify that the data populated correctly
+--After importing data into the table from 'obesity_data_raw_cleaned.csv' via the pgAdmin Import/Export tool, verify that the data populated correctly
 SELECT * FROM participants
