@@ -40,18 +40,12 @@ def preprocess_input(data):
     
     return pd.DataFrame([data])
 
-# BMI Calculation
-def calculate_bmi(height, weight):
-    return weight / (height ** 2)
-
 # Streamlit UI for user input
 st.title('Obesity Prediction')
 
 # Gender input
 gender = st.selectbox('What is your gender?', ['Female', 'Male'])
 age = st.number_input('What is your age?', min_value=14, max_value=61, value=25)
-height_m = st.number_input('What is your height (in meters)?', min_value=1.45, max_value=1.98, value=1.7)
-weight_kg = st.number_input('What is your weight (in kilograms)?', min_value=39.0, max_value=173.0, value=70.0)
 family_history_with_overweight = st.selectbox('Has a family member suffered or suffers from overweight?', ['Yes', 'No'])
 high_calorie_intake = st.selectbox('Do you eat high caloric food frequently?', ['Yes', 'No'])
 vegetable_consumption = st.selectbox('Do you usually eat vegetables in your meals?', ['Never', 'Sometimes', 'Always'])
@@ -65,16 +59,10 @@ tech_usage_time = st.selectbox('How much time do you use technological devices?'
 alcohol_intake = st.selectbox('How often do you drink alcohol?', ['I do not drink', 'Sometimes', 'Frequently', 'Always'])
 transportation_used = st.selectbox('Which transportation do you usually use?', ['Automobile', 'Motorbike', 'Bike', 'Public Transportation', 'Walking'])
 
-# Calculate BMI
-bmi = calculate_bmi(height_m, weight_kg)
-st.write(f"Your BMI is: {bmi:.2f}")
-
 # Collect input data into a dictionary
 input_data = {
     'gender': gender,
     'age': age,
-    'height_m': height_m,
-    'weight_kg': weight_kg,
     'family_history_with_overweight': family_history_with_overweight == 'Yes',
     'high_calorie_intake': high_calorie_intake == 'Yes',
     'vegetable_consumption': {'Never': 1, 'Sometimes': 2, 'Always': 3}[vegetable_consumption],
@@ -96,13 +84,3 @@ processed_input = preprocess_input(input_data)
 if st.button('Predict Obesity Level'):
     prediction = model.predict(processed_input)
     st.write(f'Predicted Obesity Level: {prediction[0]}')
-
-    # Additional message based on BMI
-    if bmi < 18.5:
-        st.write("Your BMI indicates that you are underweight. Consider consulting with a healthcare provider.")
-    elif 18.5 <= bmi < 24.9:
-        st.write("Your BMI indicates that you are in a healthy weight range. Keep maintaining a balanced lifestyle.")
-    elif 25 <= bmi < 29.9:
-        st.write("Your BMI indicates that you are overweight. It's recommended to monitor your diet and exercise.")
-    else:
-        st.write("Your BMI indicates that you are obese. Consider consulting with a healthcare provider for personalized advice.")
