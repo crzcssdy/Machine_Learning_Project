@@ -11,6 +11,7 @@ For our analysis, we primarily used the dataset gathered and compiled by Fabio M
 Furthermore, this paper contains data regarding eating habits and physical conditions of individuals ages 14 and 61, using a web platform with a survey where anonymous users answered each question, to which the information was processed obtaining 17 attributes and 2111 records, after utilizing a balancing process known as SMOTE. The attributes identified with eating habits are: Frequent consumption of high caloric food (FAVC), Frequency of consumption of vegetables (FCVC), Number of main meals (NCP), Consumption of food between meals (CAEC), Consumption of water daily (CH20), and Consumption of alcohol (CALC). The attributes related with the physical condition are: Calories consumption monitoring (SCC), Physical activity frequency (FAF), Time using technology devices (TUE), Transportation used (MTRANS), other variables obtained were: Gender, Age, Height and Weight.
 
 Link to the article can be found here: https://www.sciencedirect.com/science/article/pii/S2352340919306985?via%3Dihub
+
 Link to the dataset can be found here: https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition
 
 ## Model Choice and Dependencies
