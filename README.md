@@ -58,6 +58,7 @@ The repository files can be downloaded to open and execute the jupyter notebook 
 * EDA_Obesity_Dataset.ipynb
 * Additional EDA and Potential Model Comparison.ipynb
 * Obesity_Classification_Model_Setup_&_Optimization.ipynb
+
 Note that since the files contain relative file paths, it is important that the file locations within the SurfsUp directory are not changed in order for the files to execute properly.
 
 # Ethical Considerations
