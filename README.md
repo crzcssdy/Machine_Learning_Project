@@ -3,8 +3,6 @@
 # Overview
 Obesity has been a rising health concern among most modern populations for the last few decades. There are numerous health risks, both  immediate and long-term, that can have detrimental consequences to the longevity and quality of life for an individual. Such consequential impacts include but are not limited to: respiratory difficulties, increased risk of fractures, hypertension, diseases of the gallbladder and pancreas, increased mental health issues, increased risk of non-communicable diseases, and more. As such, it is important for policymakers and the general public to understand not just the impact of obesity, but the leading causes that contribute significantly to obesity rates. Our goal for this project is to further understand and visualize the leading contributors to growing obesity rates in populations such as Colombia, Peru and Mexico, and develop a machine learning model that can support health initiatives to manage overweight and obesity by predicting obesity levels based on lifestyle parameters.  
 
-Link to our interactive model can be found here: https://obesityy.streamlit.app/
-
 ## Data Source & Database Selection
 For our analysis, we primarily used the dataset gathered and compiled by Fabio Mendoza Palechor and Alexis de la Hoz Manotas with the technical assistance provided by the Universidad de la Costa (CUC). The dataset was used in relation to Palechor and Manotas' academic article "Dataset for estimation of obesity levels based on eating habits and physical condition in individuals from Colombia, Peru and Mexico", published in August 2019. We chose this dataset specifically because the information gathered correlates strongly with the data needed to develop our machine learning model for predicting obesity. 
 
