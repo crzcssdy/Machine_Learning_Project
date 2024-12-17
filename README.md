@@ -37,6 +37,7 @@ Our third attempt at optimization focused on tuning the model's hyperparameters,
 Our final Obesity classifcation model is a Random Forest Classifier with an overall accuracy of 87.00% and an average of CV accuracy of 86.55%.  These figures demonstrate the model's predictive power as well as its  flexibility to new data respectively.  When looking at the classification report we see that the model also does a good job at predicting each Obesity level with the weakest performing classification being Normal Weight.
 
 ![alt text](<Images/Classification Report_Final.png>)
+
 Looking at the confusion matrix, we see that the model tends to slightly overestimate the obesity level of actual Normal Weight instances.  Given the objective of the model to be a guide/tool to help manage the prevalence of obesity, we decided that this slight overestimation of higher obesity levels in actual Normal Weight instances was acceptable.
 
 ![alt text](<Images/Confusion Matrix_Final.png>)
